@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu mensaje!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+        .thank-you-container {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        .thank-you-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .countdown {
+            font-size: 1.1rem;
+            margin-top: 25px;
+            color: #888;
+        }
+        .btn-primary {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>¡Gracias por tu mensaje!</h1>
+        <p>He recibido tu mensaje y te responderé lo antes posible.</p>
+        <p>Mientras tanto, puedes explorar más de mis proyectos o conectarte conmigo en mis redes sociales.</p>
+        <div class="countdown">
+            Serás redirigido a la página principal en <span id="countdown">5</span> segundos...
+        </div>
+        <a href="index.html" class="btn-primary">Volver ahora</a>
+    </div>
+
+    <script>
+        // Contador regresivo para redirección
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdown = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
